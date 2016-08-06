@@ -1,0 +1,5 @@
+#!/bin/bash
+
+function dec() {
+ /usr/local/bin/cfr-decompiler $1 $1.java
+}

@@ -1,0 +1,13 @@
+#!/usr/bin/python
+mark= input("Enter mark:  ")
+
+if mark == 100:
+	print "[Info] Excellent.. Perfect Score"
+if mark <0 or mark > 100:
+	print "[Info] Invalid Mark"
+if mark > 80 :
+	print "[Info] Grade A"
+elif mark >60:
+	print "[Info] Grade B"
+else :
+	print "[Info] You Failed" 

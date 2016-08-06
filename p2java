@@ -1,0 +1,19 @@
+## This for python compile to java code
+## Requirement1 : brew install jython 
+## Requirement2 : jd-cli or brew cfr-compiler
+## https://github.com/kwart/jd-cmd
+# jd-cli () 
+# { 
+#     export DIRNAME=/usr/local/bin/;
+#     java -jar "$DIRNAME/jd-cli.jar" $@
+# }
+#!/bin/sh
+
+
+jython py2java.jython
+mkdir -p workdir/jclass
+yes|mv workdir/*.class workdir/jclass
+
+#find workdir/jclass/*.class | xargs -I@ bash -c  "/usr/local/bin/cfr-decompiler @ @.java"
+
+## TODO : Automaticall decompile all JAVA's class file to java source code.

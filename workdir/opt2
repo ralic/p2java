@@ -1,0 +1,28 @@
+#!/usr/bin/python
+
+import sys, getopt
+
+def main(argv):
+   firstname = ''
+   lastname =''
+   try:
+      opts, args = getopt.getopt(argv,"hf:l:",["fName=","lName="])
+   except getopt.GetoptError:
+      print 'Usage: test.py -f <firstname> -l <lastname>'
+      sys.exit(2)
+
+   for opt, arg in opts:
+      if opt == '-h':
+         print 'Usage: test.py -f <firstname> -l <lastname>'
+         sys.exit()
+      elif opt in ("-f", "--fName"):
+         firstname = arg
+      elif opt in ("-l", "--lName"):
+         lastname = arg
+
+   print 'First Name is "', firstname, '"'
+   print 'Last Name is "', lastname, '"'
+
+if __name__ == "__main__":
+   main(sys.argv[1:])
+    
